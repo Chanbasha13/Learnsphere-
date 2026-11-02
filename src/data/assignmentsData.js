@@ -1,0 +1,93 @@
+// LearnSphere - Academic Assignments Data
+export const assignmentsData = [
+  {
+    id: 'assign_1',
+    courseId: 1,
+    title: 'Responsive 3D Portfolio Showcase',
+    course: 'Web Development Bootcamp',
+    department: 'Programming Academy',
+    description: 'Design and code a multi-section interactive portfolio website utilizing semantic HTML5, CSS Grid, and CSS 3D perspective cards. Must adapt gracefully across mobile, tablet, and desktop viewports.',
+    dueDate: '2026-11-20',
+    points: 100,
+    status: 'Pending', // Pending | Submitted | Graded
+    submissionText: '',
+    grade: null,
+    feedback: '',
+    instructions: 'Include an architectural About section, dynamic Project Cards with 3D hover tilt, and a validated contact form.'
+  },
+  {
+    id: 'assign_2',
+    courseId: 2,
+    title: 'Financial Forecasting & CLI Pipeline',
+    course: 'Python & Machine Learning Foundations',
+    department: 'Programming Academy',
+    description: 'Construct a command-line interface in Python that computes compound interest, monthly loan amortizations, and basic tax brackets. Implement modular functions and robust exception handling.',
+    dueDate: '2026-11-24',
+    points: 100,
+    status: 'Submitted',
+    submissionText: 'Implemented multi-tiered financial calculator in python with custom dataclasses and numpy amortizations.',
+    grade: 96,
+    feedback: 'Superb exception handling and clean modular code structure. Well documented!',
+    instructions: 'Use try-except blocks to catch ValueError when user supplies non-numeric input.'
+  },
+  {
+    id: 'assign_3',
+    courseId: 3,
+    title: 'Student Information System OOP Model',
+    course: 'Enterprise Java & Distributed Systems',
+    department: 'Programming Academy',
+    description: 'Create an Object-Oriented system using Java classes, inheritance, interfaces, and Java Collections (ArrayList & HashMap) to store student records and calculate GPAs.',
+    dueDate: '2026-11-28',
+    points: 100,
+    status: 'Pending',
+    submissionText: '',
+    grade: null,
+    feedback: '',
+    instructions: 'Demonstrate proper access modifiers (encapsulation) with private fields and public getter/setter methods.'
+  },
+  {
+    id: 'assign_4',
+    courseId: 4,
+    title: 'Sorting Algorithms Benchmarking Lab',
+    course: 'Data Structures & Algorithmic Optimization',
+    department: 'Mathematics Center',
+    description: 'Implement QuickSort and MergeSort from scratch. Measure execution time across arrays of 1,000, 10,000, and 50,000 elements and prepare an asymptotic time complexity comparison summary.',
+    dueDate: '2026-11-18',
+    points: 100,
+    status: 'Graded',
+    submissionText: 'Benchmarked quicksort with median-of-three pivot vs mergesort on random, reverse, and nearly sorted arrays.',
+    grade: 98,
+    feedback: 'Outstanding mathematical analysis of cache locality and pivot degradation.',
+    instructions: 'Include both best-case and worst-case mathematical Big-O bounds in your writeup.'
+  },
+  {
+    id: 'assign_5',
+    courseId: 5,
+    title: 'Deep Learning Classification & Gradient Analysis',
+    course: 'Artificial Intelligence & Neural Architectures',
+    department: 'Science & Technology',
+    description: 'Train a classification neural network on an image dataset. Evaluate validation accuracy, loss curves, confusion matrices, and explain backpropagation derivations.',
+    dueDate: '2026-11-30',
+    points: 100,
+    status: 'Pending',
+    submissionText: '',
+    grade: null,
+    feedback: '',
+    instructions: 'Discuss why accuracy alone is insufficient when dealing with imbalanced datasets and provide F1-score breakdown.'
+  },
+  {
+    id: 'assign_6',
+    courseId: 6,
+    title: 'High-Fidelity Spatial Design System',
+    course: 'Spatial UI/UX & Design Systems',
+    department: 'Design Studio',
+    description: 'Create an end-to-end user flow for a spatial computing application. Design 5 key screens using the 8-point grid, consistent typography scale, and WCAG AA contrast compliance.',
+    dueDate: '2026-12-05',
+    points: 100,
+    status: 'Pending',
+    submissionText: '',
+    grade: null,
+    feedback: '',
+    instructions: 'Include responsive breakpoints, dark/light token variants, and interactive button states.'
+  }
+];

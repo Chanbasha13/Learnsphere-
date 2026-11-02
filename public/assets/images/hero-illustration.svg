@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 440" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hero-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="hero-grad-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+    <filter id="hero-shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#1e1b4b" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Background Decorative Glowing Circles -->
+  <circle cx="340" cy="220" r="180" fill="#EEF2FF" opacity="0.6"/>
+  <circle cx="520" cy="120" r="120" fill="#F5F3FF" opacity="0.8"/>
+
+  <!-- Main Laptop Device -->
+  <g transform="translate(140, 70)" filter="url(#hero-shadow)">
+    <!-- Laptop Screen Bezel -->
+    <rect x="0" y="0" width="400" height="250" rx="14" fill="#0F172A"/>
+    <!-- Camera -->
+    <circle cx="200" cy="10" r="3" fill="#64748B"/>
+    <!-- Inner Screen Display -->
+    <rect x="12" y="20" width="376" height="218" rx="6" fill="#1E293B"/>
+
+    <!-- Screen Content: LMS Classroom UI -->
+    <!-- Nav inside screen -->
+    <rect x="12" y="20" width="376" height="28" fill="#334155"/>
+    <circle cx="28" cy="34" r="5" fill="#EF4444"/>
+    <circle cx="44" cy="34" r="5" fill="#F59E0B"/>
+    <circle cx="60" cy="34" r="5" fill="#10B981"/>
+    <text x="80" y="38" fill="#F8FAFC" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">LearnSphere Classroom</text>
+
+    <!-- Video lecture frame -->
+    <rect x="24" y="60" width="220" height="130" rx="6" fill="#0F172A"/>
+    <polygon points="125,115 125,135 145,125" fill="#38BDF8"/>
+    <text x="35" y="80" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="9">Module 4: Full Stack Architecture</text>
+    <rect x="35" y="170" width="198" height="6" rx="3" fill="#334155"/>
+    <rect x="35" y="170" width="140" height="6" rx="3" fill="#4F46E5"/>
+
+    <!-- Sidebar lessons list -->
+    <rect x="256" y="60" width="120" height="28" rx="4" fill="#334155"/>
+    <circle cx="268" cy="74" r="5" fill="#10B981"/>
+    <rect x="280" y="71" width="85" height="6" rx="2" fill="#F8FAFC"/>
+
+    <rect x="256" y="94" width="120" height="28" rx="4" fill="#334155"/>
+    <circle cx="268" cy="108" r="5" fill="#10B981"/>
+    <rect x="280" y="105" width="70" height="6" rx="2" fill="#F8FAFC"/>
+
+    <rect x="256" y="128" width="120" height="28" rx="4" fill="#4F46E5"/>
+    <circle cx="268" cy="142" r="5" fill="#FBBF24"/>
+    <rect x="280" y="139" width="80" height="6" rx="2" fill="#FFFFFF"/>
+
+    <rect x="256" y="162" width="120" height="28" rx="4" fill="#1E293B"/>
+    <circle cx="268" cy="176" r="5" fill="#64748B"/>
+    <rect x="280" y="173" width="60" height="6" rx="2" fill="#64748B"/>
+
+    <!-- Laptop Base -->
+    <path d="M -40 250 L 440 250 L 410 268 L -10 268 Z" fill="#94A3B8"/>
+    <rect x="160" y="250" width="80" height="6" rx="2" fill="#64748B"/>
+  </g>
+
+  <!-- Floating Graduation Cap (Top Left) -->
+  <g transform="translate(60, 40)" filter="url(#hero-shadow)">
+    <polygon points="50,15 95,35 50,55 5,35" fill="#1E293B"/>
+    <polygon points="50,50 85,35 85,45 50,60 15,45 15,35" fill="#0F172A"/>
+    <!-- Tassel -->
+    <path d="M 50 35 L 85 45 L 85 65" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
+    <circle cx="85" cy="68" r="3" fill="#F59E0B"/>
+    <!-- Label -->
+    <rect x="-10" y="75" width="120" height="26" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="50" y="92" fill="#4F46E5" font-family="-apple-system, sans-serif" font-weight="700" font-size="11" text-anchor="middle">🎓 Verified Degree</text>
+  </g>
+
+  <!-- Floating Progress Metric Card (Bottom Left) -->
+  <g transform="translate(40, 240)" filter="url(#hero-shadow)">
+    <rect x="0" y="0" width="170" height="110" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <circle cx="25" cy="25" r="14" fill="#EEF2FF"/>
+    <text x="25" y="30" fill="#4F46E5" font-size="14" text-anchor="middle">📈</text>
+    <text x="48" y="28" fill="#1E293B" font-family="-apple-system, sans-serif" font-weight="700" font-size="12">Weekly Growth</text>
+    <text x="20" y="65" fill="#4F46E5" font-family="-apple-system, sans-serif" font-weight="900" font-size="22">+94.6%</text>
+    <rect x="20" y="80" width="130" height="8" rx="4" fill="#F1F5F9"/>
+    <rect x="20" y="80" width="115" height="8" rx="4" fill="#10B981"/>
+    <text x="20" y="100" fill="#64748B" font-family="-apple-system, sans-serif" font-size="9">38 hours studied</text>
+  </g>
+
+  <!-- Floating Certificate / Trophy Badge (Top Right) -->
+  <g transform="translate(500, 60)" filter="url(#hero-shadow)">
+    <rect x="0" y="0" width="145" height="95" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <circle cx="72" cy="35" r="22" fill="#FEF3C7"/>
+    <text x="72" y="43" fill="#D97706" font-size="20" text-anchor="middle">🏆</text>
+    <text x="72" y="72" fill="#1E293B" font-family="-apple-system, sans-serif" font-weight="700" font-size="12" text-anchor="middle">Top 5% Learner</text>
+    <text x="72" y="86" fill="#10B981" font-family="-apple-system, sans-serif" font-weight="600" font-size="10" text-anchor="middle">Badge Unlocked</text>
+  </g>
+
+  <!-- Floating Active Quiz Badge (Bottom Right) -->
+  <g transform="translate(480, 240)" filter="url(#hero-shadow)">
+    <rect x="0" y="0" width="165" height="100" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+    <circle cx="28" cy="28" r="14" fill="#D1FAE5"/>
+    <text x="28" y="34" fill="#059669" font-size="14" text-anchor="middle">⭐</text>
+    <text x="50" y="32" fill="#1E293B" font-family="-apple-system, sans-serif" font-weight="700" font-size="12">Quiz Mastered</text>
+    <text x="20" y="65" fill="#0F172A" font-family="-apple-system, sans-serif" font-weight="800" font-size="18">100% Score</text>
+    <text x="20" y="85" fill="#64748B" font-family="-apple-system, sans-serif" font-size="10">Web Dev Final Test Passed</text>
+  </g>
+</svg>

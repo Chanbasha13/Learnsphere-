@@ -1,0 +1,467 @@
+/* LearnSphere - 3D Digital University Campus Engine */
+
+.campus-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #0e172a 0%, #06080e 75%);
+  overflow: hidden;
+  padding: 40px 20px 60px;
+}
+
+[data-theme='light'] .campus-hero-section {
+  background: radial-gradient(circle at 50% 30%, #e2e8f0 0%, #f1f5f9 75%);
+}
+
+/* Background Atmospheric Canvas */
+.campus-starfield-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* HUD Overlay Controls */
+.campus-hud-header {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 24px;
+}
+
+.campus-title-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: var(--accent-cyan);
+  font-size: 0.825rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.campus-hero-heading {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme='light'] .campus-hero-heading {
+  background: linear-gradient(135deg, #0f172a 40%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.campus-hero-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* 3D Viewport Stage */
+.stage-3d-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 520px;
+  perspective: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+/* Plaza World Coordinate Container */
+.plaza-world-3d {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ground Plane */
+.plaza-ground-disc {
+  position: absolute;
+  width: 760px;
+  height: 760px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.95) 60%, rgba(6, 8, 14, 0.98) 100%);
+  border: 2px solid rgba(56, 189, 248, 0.2);
+  transform: rotateX(90deg) translateZ(0);
+  box-shadow: 0 0 60px rgba(56, 189, 248, 0.15), inset 0 0 80px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme='light'] .plaza-ground-disc {
+  background: radial-gradient(circle, #f8fafc 0%, #e2e8f0 60%, #cbd5e1 100%);
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Concentric Circuit Rings on Plaza */
+.plaza-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(56, 189, 248, 0.25);
+  pointer-events: none;
+}
+.plaza-ring-1 { width: 620px; height: 620px; }
+.plaza-ring-2 { width: 440px; height: 440px; border-style: solid; border-color: rgba(255, 255, 255, 0.08); }
+.plaza-ring-3 { width: 220px; height: 220px; border: 2px solid rgba(56, 189, 248, 0.4); box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); }
+
+/* Central Monument / Core */
+.plaza-monument-core {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.monument-beacon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #38bdf8 0%, #0284c7 100%);
+  box-shadow: 0 0 35px #38bdf8;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+  transform: translateZ(50px);
+}
+
+.monument-ring {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(56, 189, 248, 0.6);
+  border-radius: 50%;
+  animation: spinSlow 12s linear infinite;
+  transform: translateZ(45px);
+}
+
+/* 3D Department Building Node */
+.building-node-3d {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.building-node-3d:hover {
+  transform: scale(1.08) translateZ(15px);
+}
+
+.building-node-3d.active-selected {
+  transform: scale(1.15) translateZ(25px);
+}
+
+/* Architectural Tower Block */
+.building-block-mesh {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 10px;
+  left: 10px;
+  transform-style: preserve-3d;
+}
+
+/* Faces of the Building Cuboid */
+.bface {
+  position: absolute;
+  box-sizing: border-box;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 6px;
+  overflow: hidden;
+}
+
+[data-theme='light'] .bface {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Window Rows inside Faces */
+.window-strip {
+  width: 100%;
+  height: 5px;
+  background: repeating-linear-gradient(90deg, rgba(56, 189, 248, 0.75) 0px, rgba(56, 189, 248, 0.75) 10px, transparent 10px, transparent 16px);
+  border-radius: 2px;
+}
+
+/* Roof Slab */
+.bface-roof {
+  width: 90px;
+  height: 90px;
+  background: #1e293b;
+  border: 2px solid var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme='light'] .bface-roof {
+  background: #e2e8f0;
+}
+
+.roof-spire {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 16px #38bdf8;
+}
+
+/* Floating Hologram Label above building */
+.building-hologram-pin {
+  position: absolute;
+  top: -65px;
+  left: 50%;
+  transform: translateX(-50%) rotateX(-60deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.pin-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid var(--accent-cyan);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 12px var(--accent-cyan-glow);
+  white-space: nowrap;
+}
+
+.pin-landmark {
+  font-size: 0.68rem;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+  font-weight: 600;
+}
+
+/* Ground Contact Drop Shadow */
+.building-ground-shadow {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
+  transform: translateZ(0);
+}
+
+/* Campus Control HUD Toolbar */
+.campus-controls-hud {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.hud-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  font-size: 0.825rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+[data-theme='light'] .hud-btn {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.hud-btn:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-cyan);
+}
+
+.hud-btn.active {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+/* Department Inspection Drawer Modal */
+.dept-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.dept-modal-card {
+  width: 100%;
+  max-width: 680px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  position: relative;
+}
+
+.dept-modal-header {
+  padding: 24px 28px;
+  position: relative;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.dept-modal-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dept-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.dept-stat-box {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  text-align: center;
+}
+
+.dept-stat-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.dept-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.dept-topics-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dept-topic-pill {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.dept-modal-footer {
+  padding: 20px 28px;
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 2D Blueprint Grid Fallback */
+.blueprint-grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+  width: 100%;
+  max-width: 1100px;
+  padding: 20px;
+}
+
+.blueprint-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.blueprint-card:hover {
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stage-3d-viewport {
+    height: 420px;
+    transform: scale(0.75);
+  }
+  .dept-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

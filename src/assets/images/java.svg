@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="jv-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C2410C"/>
+      <stop offset="60%" stop-color="#9A3412"/>
+      <stop offset="100%" stop-color="#7C2D12"/>
+    </linearGradient>
+    <linearGradient id="jv-cup" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="jv-steam" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FDBA74" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFF7ED" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="jv-shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#431407" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="600" height="360" rx="16" fill="url(#jv-bg)"/>
+
+  <!-- Background Decorative Rings -->
+  <circle cx="120" cy="80" r="160" fill="#EA580C" opacity="0.15" filter="blur(30px)"/>
+  <circle cx="500" cy="300" r="120" fill="#F97316" opacity="0.1" filter="blur(20px)"/>
+
+  <!-- Code Card Left Side -->
+  <g filter="url(#jv-shadow)">
+    <rect x="50" y="55" width="310" height="250" rx="12" fill="#18181B"/>
+    <rect x="50" y="55" width="310" height="32" rx="12" fill="#27272A"/>
+    <rect x="50" y="75" width="310" height="12" fill="#27272A"/>
+    
+    <circle cx="70" cy="71" r="5" fill="#EF4444"/>
+    <circle cx="86" cy="71" r="5" fill="#F59E0B"/>
+    <circle cx="102" cy="71" r="5" fill="#10B981"/>
+    <text x="125" y="75" fill="#A1A1AA" font-family="monospace" font-size="11">App.java</text>
+
+    <g font-family="monospace" font-size="11">
+      <text x="70" y="115" fill="#F43F5E">public class <tspan fill="#38BDF8">CourseManager</tspan> {</text>
+      <text x="85" y="138" fill="#F43F5E">public static void <tspan fill="#FBBF24">main</tspan><tspan fill="#E4E4E7">(String[] args) {</tspan></text>
+      <text x="105" y="161" fill="#A1A1AA">// Object Oriented Architecture</text>
+      <text x="105" y="184" fill="#E4E4E7">List&lt;<tspan fill="#38BDF8">Course</tspan>&gt; list = <tspan fill="#F43F5E">new</tspan> ArrayList&lt;&gt;();</text>
+      <text x="105" y="207" fill="#E4E4E7">list.add(<tspan fill="#F43F5E">new</tspan> Course(<tspan fill="#34D399">"Enterprise Java"</tspan>));</text>
+      <text x="105" y="230" fill="#38BDF8">System</text><text x="145" y="230" fill="#E4E4E7">.out.println(list.size());</text>
+      <text x="85" y="253" fill="#E4E4E7">}</text>
+      <text x="70" y="276" fill="#E4E4E7">}</text>
+    </g>
+  </g>
+
+  <!-- Java Coffee Cup & Vapor Illustration Right Side -->
+  <g transform="translate(390, 70)" filter="url(#jv-shadow)">
+    <!-- Steam Curves -->
+    <path d="M 50 60 Q 40 30 55 10 Q 70 -10 60 -30" fill="none" stroke="url(#jv-steam)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M 80 50 Q 95 25 80 0 Q 65 -25 75 -45" fill="none" stroke="url(#jv-steam)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M 110 60 Q 120 35 105 15 Q 90 -5 100 -25" fill="none" stroke="url(#jv-steam)" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Cup Body -->
+    <path d="M 20 70 L 35 170 Q 80 200 125 170 L 140 70 Z" fill="#FAFAFA"/>
+    <!-- Coffee Surface -->
+    <ellipse cx="80" cy="70" rx="60" ry="14" fill="#451A03"/>
+
+    <!-- Cup Handle -->
+    <path d="M 130 90 Q 180 90 170 135 Q 160 160 120 150" fill="none" stroke="#FAFAFA" stroke-width="14" stroke-linecap="round"/>
+    
+    <!-- Cup Emblem (Java Text) -->
+    <rect x="52" y="105" width="56" height="28" rx="6" fill="#EA580C"/>
+    <text x="60" y="124" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-weight="800" font-size="14">JAVA</text>
+
+    <!-- Saucer Plate -->
+    <ellipse cx="80" cy="185" rx="85" ry="12" fill="#E4E4E7"/>
+    <ellipse cx="80" cy="183" rx="70" ry="8" fill="#F4F4F5"/>
+
+    <!-- Badge -->
+    <g transform="translate(-10, 195)">
+      <rect x="0" y="10" width="175" height="34" rx="8" fill="#7C2D12" stroke="#FDBA74" stroke-width="1.5"/>
+      <text x="14" y="32" fill="#FFEDD5" font-family="-apple-system, sans-serif" font-weight="600" font-size="12">☕ Core + Advanced Java</text>
+    </g>
+  </g>
+</svg>
